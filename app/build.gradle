@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+
+    defaultConfig {
+        applicationId "org.appspot.apprtc"
+        minSdkVersion 16
+        targetSdkVersion 29
+
+        testApplicationId "org.appspot.apprtc.test"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation files('libs/autobanh.jar')
+    implementation files('libs/libwebrtc.jar')
+
+    implementation 'com.android.support:support-annotations:28.0.0'
+
+}

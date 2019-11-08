@@ -48,6 +48,43 @@
             android:background="@android:drawable/ic_input_add" />
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+
+        <!-- TODO(crbug.com/900912): Fix and remove lint ignore -->
+        <EditText
+            tools:ignore="LabelFor,Autofill"
+            android:id="@+id/user_name_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:inputType="text"/>
+        <EditText
+            tools:ignore="LabelFor,Autofill"
+            android:id="@+id/password_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:contentDescription="@string/connect_description"
+            android:text="@string/login"
+            />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/room_listview_description"
         android:layout_width="match_parent"

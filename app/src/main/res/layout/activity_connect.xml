@@ -64,6 +64,7 @@
             android:layout_weight="1"
             android:maxLines="1"
             android:imeOptions="actionDone"
+            android:hint="@string/alhasan"
             android:inputType="text"/>
         <EditText
             tools:ignore="LabelFor,Autofill"
@@ -73,7 +74,9 @@
             android:layout_weight="1"
             android:maxLines="1"
             android:imeOptions="actionDone"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:hint="@string/pass_hint"
+            />
 
         <Button
             android:id="@+id/login_button"

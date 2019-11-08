@@ -33,6 +33,7 @@ import android.view.inputmethod.EditorInfo;
 import android.webkit.URLUtil;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -109,6 +110,8 @@ public class ConnectActivity extends Activity {
     registerForContextMenu(roomListView);
     ImageButton connectButton = findViewById(R.id.connect_button);
     connectButton.setOnClickListener(connectListener);
+    Button loginButton = findViewById(R.id.login_button);
+    loginButton.setOnClickListener(loginListener);
     addFavoriteButton = findViewById(R.id.add_favorite_button);
     addFavoriteButton.setOnClickListener(addFavoriteListener);
 
@@ -661,14 +664,16 @@ public class ConnectActivity extends Activity {
   private final OnClickListener connectListener = new OnClickListener() {
     @Override
     public void onClick(View view) {
-//      connectToRoom(roomEditText.getText().toString(), false, false, false, 0);
-      try{
-        SignalManager signalManager = new SignalManager();
-        signalManager.init();
-      }
-      catch (Exception e){
-        e.printStackTrace();
-      }
+      connectToRoom(roomEditText.getText().toString(), false, false, false, 0);
+    }
+  };
+  private final OnClickListener loginListener = view -> {
+    try{
+      SignalManager signalManager = new SignalManager();
+      signalManager.init();
+    }
+    catch (Exception e){
+      e.printStackTrace();
     }
   };
 }

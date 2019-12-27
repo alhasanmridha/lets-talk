@@ -10,6 +10,7 @@
 
 package org.appspot.apprtc;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -37,13 +38,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import org.appspot.apprtc.signalling.SignalManager;
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.Random;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 /**
  * Handles the initial setup where the user selects which room to join.
@@ -661,14 +659,7 @@ public class ConnectActivity extends Activity {
   private final OnClickListener connectListener = new OnClickListener() {
     @Override
     public void onClick(View view) {
-//      connectToRoom(roomEditText.getText().toString(), false, false, false, 0);
-      try{
-        SignalManager signalManager = new SignalManager();
-        signalManager.init();
-      }
-      catch (Exception e){
-        e.printStackTrace();
-      }
+      connectToRoom(roomEditText.getText().toString(), false, false, false, 0);
     }
   };
 }

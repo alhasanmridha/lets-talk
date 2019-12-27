@@ -10,12 +10,20 @@
 
 package org.appspot.apprtc.test;
 
-import android.os.Build;
-import android.util.Log;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
-import androidx.test.InstrumentationRegistry;
-import androidx.test.filters.SmallTest;
-import androidx.test.runner.AndroidJUnit4;
+import android.os.Build;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.filters.SmallTest;
+import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import org.appspot.apprtc.AppRTCClient.SignalingParameters;
 import org.appspot.apprtc.PeerConnectionClient;
 import org.appspot.apprtc.PeerConnectionClient.PeerConnectionEvents;
@@ -36,16 +44,6 @@ import org.webrtc.StatsReport;
 import org.webrtc.VideoCapturer;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 @RunWith(AndroidJUnit4.class)
 public class PeerConnectionClientTest implements PeerConnectionEvents {

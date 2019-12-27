@@ -1,2 +1,2 @@
-# lets-talk
-This is a sample webrtc application for android device
+# Lets Talk
+This application is developed to make webrtc project easy to build for developers.

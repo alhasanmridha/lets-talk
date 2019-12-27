@@ -27,12 +27,12 @@ public class Connection extends AsyncTask<Void, Void, Void> {
     X509TrustManager x509TrustManager = new X509TrustManager() {
         @Override
         public void checkClientTrusted(X509Certificate[] x509Certificates, String s) {
-            Log.d(TAG, "checkClientTrusted: " + s);
+            Log.d(TAG, "checkClientTrusted: "+s);
         }
 
         @Override
         public void checkServerTrusted(X509Certificate[] x509Certificates, String s) {
-            Log.d(TAG, "checkServerTrusted: " + s);
+            Log.d(TAG, "checkServerTrusted: "+s);
         }
 
         @Override
@@ -59,12 +59,6 @@ public class Connection extends AsyncTask<Void, Void, Void> {
                 .setHostnameVerifier((s, sslSession) -> true)
                 .build();
     }
-//    get xmppconnection instance
-    public AbstractXMPPConnection getConnection() throws IllegalAccessException{
-        if (connection.isAuthenticated())
-            return connection;
-        throw new IllegalAccessException();
-    }
 
     private ConnectionListener connectionListener = new ConnectionListener() {
         @Override
@@ -90,12 +84,12 @@ public class Connection extends AsyncTask<Void, Void, Void> {
 
         @Override
         public void connectionClosed() {
-            Log.i(TAG, "connectionClosed: connection closed successfully");
+
         }
 
         @Override
         public void connectionClosedOnError(Exception e) {
-            Log.e(TAG, "connectionClosedOnError: ", e);
+
         }
     };
 
